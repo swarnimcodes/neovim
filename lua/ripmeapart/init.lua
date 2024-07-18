@@ -8,16 +8,14 @@ local swarnimGroup = augroup("swarnim", {})
 
 -- Highlight on yank
 autocmd("TextYankPost", {
-	group = swarnimGroup,
-	pattern = "*",
-	callback = function()
-		vim.highlight.on_yank({
-			highlight_group = "IncSearch",
-			timeout = 40,
-		})
-	end,
+  group = swarnimGroup,
+  pattern = "*",
+  callback = function()
+    vim.highlight.on_yank({
+      highlight_group = "IncSearch",
+      timeout = 40,
+    })
+  end,
 })
 
-
-
-require("lspconfig").gleam.setup({})
+-- require("lspconfig").gleam.setup({})
