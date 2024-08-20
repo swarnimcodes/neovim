@@ -7,6 +7,11 @@ return {
       lua = { "stylua" },
       python = { "ruff_format" },
       go = { "gofmt" },
+      javascript = { "prettierd" },
+      typescript = { "prettierd" },
+      json = { "jq" },
+      css = { "prettierd" },
+      html = { "prettierd" },
     },
     format_on_save = {
       timeout_ms = 300,

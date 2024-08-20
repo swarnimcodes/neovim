@@ -57,6 +57,12 @@ return {
       -- tsserver
       lspconf.tsserver.setup({})
 
+      -- tailwind
+      lspconf.tailwindcss.setup({})
+
+      -- eslint
+      lspconf.eslint.setup({})
+
       -- LSP Config
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
@@ -79,8 +85,8 @@ return {
         end,
       })
 
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+      -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+      -- capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
     end,
   },
 }

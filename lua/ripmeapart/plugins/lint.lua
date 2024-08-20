@@ -1,7 +1,7 @@
 return {
 
   "mfussenegger/nvim-lint",
-  event = { "BufWritePre" },
+  -- event = { "BufWritePre" },
   opts = {},
   config = function()
     local lint = require("lint")
@@ -16,13 +16,16 @@ return {
       "--no-pretty",
     }
     lint.linters_by_ft = {
-      markdown = { "markdownlint" },
+      -- markdown = { "markdownlint" },
       lua = { "luacheck" },
       python = { "mypy" },
+      sh = { "shellcheck" },
     }
     vim.api.nvim_create_autocmd({ "BufWritePre" }, {
       callback = function()
         require("lint").try_lint()
+        -- for all files:
+        require("lint").try_lint("typos")
       end,
     })
   end,
