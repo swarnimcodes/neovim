@@ -55,7 +55,7 @@ return {
         },
       })
       -- tsserver
-      lspconf.tsserver.setup({})
+      lspconf.ts_ls.setup({})
 
       -- tailwind
       lspconf.tailwindcss.setup({})
