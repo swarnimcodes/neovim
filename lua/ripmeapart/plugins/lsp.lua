@@ -30,6 +30,9 @@ return {
       -- gopls
       lspconf.gopls.setup({ cmd = { "gopls" }, filetypes = { "go", "gomod", "gowork", "gotmpl" } })
 
+      -- jdtls
+      lspconf.jdtls.setup({})
+
       -- bashls
       lspconf.bashls.setup({})
       -- clangd
@@ -65,7 +68,7 @@ return {
 
       -- LSP Config
       vim.api.nvim_create_autocmd("LspAttach", {
-        group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
+        group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
         callback = function(event)
           local map = function(keys, func, desc)
             vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })

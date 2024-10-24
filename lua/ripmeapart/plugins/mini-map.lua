@@ -37,5 +37,10 @@ return {
       -- Z-index
       zindex = 10,
     },
+    vim.api.nvim_create_autocmd("VimEnter", {
+      callback = function()
+        require("mini.map").open()
+      end,
+    }),
   },
 }
